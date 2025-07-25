@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanachote Kamolmart - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #000;
+      padding: 40px;
+      max-width: 794px;
+      margin: auto;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .contact {
+      margin-bottom: 32px;
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+    }
+
+    .job-title {
+      font-weight: 600;
+    }
+
+    .job-info {
+      margin-bottom: 6px;
+    }
+
+    .list {
+      padding-left: 20px;
+      margin: 4px 0 12px;
+    }
+
+    .list li {
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .link {
+      font-size: 13px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Thanachote Kamolmart</h1>
+    <div class="link">
+      tent.leenuk@gmail.com | 061-302-7197 | Bangkok, Thailand <br />
+      <a href="https://www.linkedin.com/in/thanakamol/" target="_blank">linkedin.com/in/thanakamol</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">เป้าหมายในอาชีพ</div>
+    <div>
+      มุ่งมั่นพัฒนาทักษะและความรู้ด้านเทคโนโลยีอย่างต่อเนื่อง เพื่อสร้างคุณค่าให้กับองค์กรทั้งในด้านประสิทธิภาพ กระบวนการทำงาน และผลลัพธ์ทางธุรกิจ พร้อมเติบโตในสายงานอย่างยั่งยืน และสามารถทำงานร่วมกับทีมข้ามสายงานได้อย่างมืออาชีพ
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">ประสบการณ์ทำงาน</div>
+
+    <div class="job-info">
+      <div class="job-title">SEO Specialist</div>
+      Asia Search Solutions | ธ.ค. 2567 – ปัจจุบัน (Bangkok, Hybrid)
+    </div>
+    <ul class="list">
+      <li>ดูแลลูกค้า SEO ตั้งแต่รับบรีฟ วางกลยุทธ์ จนถึงสรุปผลลัพธ์รายเดือน</li>
+      <li>สื่อสารกับลูกค้าโดยตรง ตอบคำถาม วิเคราะห์เว็บไซต์ และอัปเดตงานให้ต่อเนื่อง</li>
+      <li>วางแผน Keyword Strategy และแนะแนวทางทั้ง On-page / Off-page SEO</li>
+      <li>สรุปผลด้วย Monthly Report พร้อมเสนอแนะเพื่อปรับปรุงประสิทธิภาพ</li>
+      <li>ใช้ Google Search Console, GA, Ahrefs ในการวิเคราะห์ Ranking และ Traffic</li>
+    </ul>
+
+    <div class="job-info">
+      <div class="job-title">Junior SEO Specialist</div>
+      NerdOptimize | ส.ค. 2567 – พ.ย. 2567
+    </div>
+    <ul class="list">
+      <li>ดูแลงาน SEO ตั้งแต่ Content Brief, Meta Tags, Internal Link จนถึง Technical Audit</li>
+      <li>วางแผน Keyword Research และปรับโครงสร้างเว็บไซต์ให้เหมาะสม</li>
+      <li>ติดตามผล Ranking และ Traffic ด้วย Ahrefs, GA, GSC</li>
+      <li>ร่วมวางแผนการทำ SEO ร่วมกับทีมภายใน โดยมี AE เป็นผู้ประสานงานกับลูกค้า</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">การศึกษา</div>
+    Burapha University (2024) <br />
+    ปริญญาตรี รัฐศาสตร์และนิติศาสตร์ | สาขารัฐประศาสนศาสตร์ สายงานบริหารทั่วไป <br />
+    GPA: 2.60
+  </div>
+
+  <div class="section">
+    <div class="section-title">ทักษะ</div>
+    <ul class="list">
+      <li>SEO: On-page, Keyword Research, Basic Audit, Technical SEO</li>
+      <li>เครื่องมือ: Ahrefs, GSC, GA, ClickUp, Airtable, Trello, Asana</li>
+      <li>พื้นฐานเว็บ: WordPress, HTML, CSS, PHP</li>
+      <li>ภาษา: ไทย (Native), อังกฤษ (Intermediate)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">ประสบการณ์เพิ่มเติม</div>
+
+    <div class="job-info">
+      <div class="job-title">ผู้ช่วยผู้ตรวจการเลือกตั้ง สภาผู้แทนราษฎร</div>
+      กกต. จังหวัดชลบุรี | พ.ย. 2566 – ธ.ค. 2566
+    </div>
+    <ul class="list">
+      <li>ตรวจสอบกระบวนการเลือกตั้งให้เป็นไปตามกฎหมาย</li>
+      <li>จัดทำรายงานและเสนอแนะแนวทางปรับปรุง</li>
+    </ul>
+
+    <div class="job-info">
+      <div class="job-title">นักศึกษาฝึกงาน</div>
+      กกต. จังหวัดชลบุรี | พ.ย. 2566 – ก.พ. 2567
+    </div>
+    <ul class="list">
+      <li>จัดเตรียมเอกสารที่เกี่ยวข้องกับการประชุมและการเลือกตั้ง</li>
+      <li>สนับสนุนด้านนโยบาย กฎหมาย และกระบวนการเลือกตั้ง</li>
+    </ul>
+  </div>
+</body>
+
+</html>
