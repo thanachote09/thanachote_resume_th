@@ -22,7 +22,9 @@
       font-size: 16px;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-weight: 700;
     }
 
@@ -86,18 +88,42 @@
       font-size: 14px;
       cursor: pointer;
     }
+
+    .export-btn {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .linkedin-icon {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
   </style>
 </head>
 
 <body>
   <button class="language-toggle" onclick="toggleLanguage()">Switch to Thai</button>
+  <button class="export-btn" onclick="exportPDF()">Export PDF</button>
 
   <div id="resume-content">
     <div class="header">
       <h1>Thanachote Kamolmart</h1>
       <div class="link">
         tent.leenuk@gmail.com | 061-302-7197 | Bangkok, Thailand <br />
-        <a href="https://www.linkedin.com/in/thanakamol/" target="_blank">linkedin.com/in/thanakamol</a>
+        <a href="https://www.linkedin.com/in/thanakamol/" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" class="linkedin-icon" />
+          linkedin.com/in/thanakamol
+        </a>
       </div>
     </div>
 
@@ -120,77 +146,54 @@
       <div class="section-title" data-lang="th" style="display:none">ประสบการณ์ทำงาน</div>
 
       <div class="job-info">
-        <div class="job-title">SEO Specialist</div>
-        Asia Search Solutions | Dec 2024 – Present (Bangkok, Hybrid)
+        <div class="job-title" data-lang="en">SEO Specialist</div>
+        <div class="job-title" data-lang="th" style="display:none">ผู้เชี่ยวชาญ SEO</div>
+        <div data-lang="en">Asia Search Solutions | Dec 2024 – Present (Bangkok, Hybrid)</div>
+        <div data-lang="th" style="display:none">Asia Search Solutions | ธ.ค. 2567 – ปัจจุบัน (กรุงเทพฯ, Hybrid)</div>
       </div>
       <ul class="list">
-        <li>Managed SEO clients from brief to monthly reporting with ongoing communication.</li>
-        <li>Directly coordinated with clients for technical analysis and consultation.</li>
-        <li>Planned SEO strategy including both on-page and off-page directions.</li>
-        <li>Delivered performance summaries with improvement plans via reports.</li>
-        <li>Used Google Search Console, GA, Ahrefs for tracking and analysis.</li>
-        <li>Integrated AI tools (ChatGPT, Gemini) for content planning, SEO analysis, and tone adaptation.</li>
+        <li data-lang="en">Used AI tools like ChatGPT and Gemini to assist in SEO planning and content optimization.</li>
+        <li data-lang="th" style="display:none">ใช้เครื่องมือ AI เช่น ChatGPT และ Gemini เพื่อวางแผน SEO และปรับเนื้อหาให้เหมาะสมกับกลุ่มเป้าหมาย</li>
+        <li data-lang="en">Managed SEO clients from brief to monthly reporting with ongoing communication.</li>
+        <li data-lang="th" style="display:none">ดูแลลูกค้า SEO ตั้งแต่รับบรีฟ จนถึงสรุปรายงานรายเดือน พร้อมสื่อสารต่อเนื่อง</li>
+        <li data-lang="en">Directly coordinated with clients for technical analysis and consultation.</li>
+        <li data-lang="th" style="display:none">ประสานงานกับลูกค้าโดยตรงเพื่อวิเคราะห์และให้คำปรึกษาทางเทคนิค</li>
       </ul>
 
       <div class="job-info">
-        <div class="job-title">Junior SEO Specialist</div>
-        NerdOptimize | Aug 2024 – Nov 2024 (Bangkok, Hybrid)
+        <div class="job-title" data-lang="en">Junior SEO Specialist</div>
+        <div class="job-title" data-lang="th" style="display:none">ผู้ช่วย SEO</div>
+        <div data-lang="en">NerdOptimize | Aug 2024 – Nov 2024 (Bangkok, Hybrid)</div>
+        <div data-lang="th" style="display:none">NerdOptimize | ส.ค. 2567 – พ.ย. 2567 (กรุงเทพฯ, Hybrid)</div>
       </div>
       <ul class="list">
-        <li>Handled SEO tasks from content brief to technical audits.</li>
-        <li>Planned keyword structure and optimized website architecture.</li>
-        <li>Tracked performance using Ahrefs, GA, GSC.</li>
-        <li>Collaborated with internal teams under Account Executive supervision.</li>
+        <li data-lang="en">Handled SEO tasks including keyword research and audits.</li>
+        <li data-lang="th" style="display:none">ดูแลงาน SEO เช่น การวิจัยคีย์เวิร์ด และตรวจสอบเว็บไซต์</li>
       </ul>
     </div>
 
     <div class="section">
       <div class="section-title" data-lang="en">Education</div>
       <div class="section-title" data-lang="th" style="display:none">การศึกษา</div>
-      Burapha University (2024)<br />
-      Bachelor's in Political and Legal Sciences | Public Administration<br />
-      GPA: 2.60
+      <div data-lang="en">Burapha University (2024)<br />Bachelor's in Political and Legal Sciences | GPA: 2.60</div>
+      <div data-lang="th" style="display:none">มหาวิทยาลัยบูรพา (2567)<br />ปริญญาตรี รัฐศาสตร์และนิติศาสตร์ | เกรดเฉลี่ย 2.60</div>
     </div>
 
     <div class="section">
       <div class="section-title" data-lang="en">Skills</div>
       <div class="section-title" data-lang="th" style="display:none">ทักษะ</div>
       <ul class="list">
-        <li data-lang="en">SEO: On-page, Keyword Research, Technical SEO, Basic Audit</li>
-        <li data-lang="th" style="display:none">ทักษะ SEO: On-page, Keyword Research, Technical SEO, Audit พื้นฐาน</li>
-        <li data-lang="en">Tools: Ahrefs, GSC, GA, ClickUp, Airtable, Trello, Asana</li>
-        <li data-lang="th" style="display:none">เครื่องมือที่ถนัด: Ahrefs, GSC, GA, ClickUp, Airtable, Trello, Asana</li>
-        <li data-lang="en">Web: WordPress, HTML, CSS, PHP</li>
-        <li data-lang="th" style="display:none">พื้นฐานเว็บไซต์: WordPress, HTML, CSS, PHP</li>
+        <li data-lang="en">SEO: Keyword Research, Technical SEO</li>
+        <li data-lang="th" style="display:none">SEO: การวิจัยคีย์เวิร์ด, เทคนิคเชิงเทคนิค</li>
+        <li data-lang="en">Tools: Ahrefs, GSC, GA, ChatGPT, Gemini</li>
+        <li data-lang="th" style="display:none">เครื่องมือที่ถนัด: Ahrefs, GSC, GA, ChatGPT, Gemini</li>
         <li data-lang="en">Language: Thai (Native), English (Intermediate)</li>
         <li data-lang="th" style="display:none">ภาษา: ไทย (เจ้าของภาษา), อังกฤษ (ระดับกลาง)</li>
       </ul>
     </div>
-
-    <div class="section">
-      <div class="section-title" data-lang="en">Other Experience</div>
-      <div class="section-title" data-lang="th" style="display:none">ประสบการณ์เพิ่มเติม</div>
-
-      <div class="job-info">
-        <div class="job-title">Assistant Election Inspector</div>
-        Election Commission, Chonburi | Nov 2023 – Dec 2023
-      </div>
-      <ul class="list">
-        <li>Ensured legal compliance during the election process.</li>
-        <li>Drafted reports and proposed improvements.</li>
-      </ul>
-
-      <div class="job-info">
-        <div class="job-title">Intern</div>
-        Election Commission, Chonburi | Nov 2023 – Feb 2024
-      </div>
-      <ul class="list">
-        <li>Prepared meeting and election documents.</li>
-        <li>Assisted with policy, law, and process operations.</li>
-      </ul>
-    </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   <script>
     function toggleLanguage() {
       const currentLang = document.querySelector('[data-lang]:not([style*="display: none"])')?.getAttribute('data-lang');
@@ -199,6 +202,18 @@
         el.style.display = el.getAttribute('data-lang') === nextLang ? '' : 'none';
       });
       document.querySelector('.language-toggle').textContent = nextLang === 'en' ? 'Switch to Thai' : 'เปลี่ยนเป็นอังกฤษ';
+    }
+
+    function exportPDF() {
+      const element = document.getElementById('resume-content');
+      const opt = {
+        margin: 0,
+        filename: 'Thanachote_Kamolmart_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
     }
   </script>
 </body>
