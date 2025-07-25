@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thanachote Kamolmart - Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -15,41 +16,42 @@
       font-family: 'Inter', sans-serif;
       background-color: #fff;
       color: #000;
-      padding: 40px;
-      max-width: 794px;
+      padding: 24px;
+      max-width: 800px;
       margin: auto;
-      line-height: 1.6;
-      font-size: 14px;
+      line-height: 1.8;
+      font-size: 16px;
     }
 
     h1, h2, h3 {
-      font-weight: 600;
+      font-weight: 700;
     }
 
     h1 {
-      font-size: 24px;
-      margin-bottom: 4px;
+      font-size: 28px;
+      margin-bottom: 8px;
     }
 
     .header {
       text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .contact {
       margin-bottom: 32px;
     }
 
+    .link {
+      font-size: 15px;
+      color: #555;
+    }
+
     .section {
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
 
     .section-title {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       border-bottom: 1px solid #ccc;
-      margin-bottom: 8px;
-      padding-bottom: 4px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
     }
 
     .job-title {
@@ -57,16 +59,16 @@
     }
 
     .job-info {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .list {
-      padding-left: 20px;
-      margin: 4px 0 12px;
+      padding-left: 24px;
+      margin: 8px 0 16px;
     }
 
     .list li {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     a {
@@ -74,94 +76,157 @@
       text-decoration: none;
     }
 
-    .link {
-      font-size: 13px;
-      color: #555;
+    .action-buttons {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .action-buttons button {
+      background: #f0f0f0;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .linkedin-icon {
+      height: 16px;
+      vertical-align: middle;
+      margin-right: 4px;
     }
   </style>
 </head>
 
 <body>
-  <div class="header">
-    <h1>Thanachote Kamolmart</h1>
-    <div class="link">
-      tent.leenuk@gmail.com | 061-302-7197 | Bangkok, Thailand <br />
-      <a href="https://www.linkedin.com/in/thanakamol/" target="_blank">linkedin.com/in/thanakamol</a>
+  <div class="action-buttons">
+    <button onclick="toggleLanguage()">Switch to Thai</button>
+    <button onclick="exportPDF()">Export PDF</button>
+  </div>
+
+  <div id="resume-content">
+    <div class="header">
+      <h1>Thanachote Kamolmart</h1>
+      <div class="link">
+        tent.leenuk@gmail.com | 061-302-7197 | Bangkok, Thailand <br />
+        <a href="https://www.linkedin.com/in/thanakamol/" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="linkedin-icon">
+          linkedin.com/in/thanakamol
+        </a>
+      </div>
+    </div>
+
+    <div class="section" data-lang="en">
+      <div class="section-title">Professional Summary</div>
+      <div>
+        To continuously grow my skills and knowledge in technology and digital solutions, while contributing meaningful impact to the organization through process optimization, cross-functional collaboration, and long-term business value. Open to diverse challenges and committed to professional growth.
+      </div>
+    </div>
+
+    <div class="section" data-lang="th" style="display:none">
+      <div class="section-title">เป้าหมายในอาชีพ</div>
+      <div>
+        มุ่งมั่นพัฒนาทักษะและความรู้ด้านเทคโนโลยีอย่างต่อเนื่อง เพื่อสร้างคุณค่าให้กับองค์กรทั้งในด้านประสิทธิภาพ กระบวนการทำงาน และผลลัพธ์ทางธุรกิจ พร้อมเติบโตในสายงานอย่างยั่งยืน และสามารถทำงานร่วมกับทีมข้ามสายงานได้อย่างมืออาชีพ
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title" data-lang="en">Work Experience</div>
+      <div class="section-title" data-lang="th" style="display:none">ประสบการณ์ทำงาน</div>
+
+      <div class="job-info">
+        <div class="job-title">SEO Specialist</div>
+        Asia Search Solutions | Dec 2024 – Present (Bangkok, Hybrid)
+      </div>
+      <ul class="list">
+        <li>Managed SEO clients from brief to monthly reporting with ongoing communication.</li>
+        <li>Directly coordinated with clients for technical analysis and consultation.</li>
+        <li>Planned SEO strategy including both on-page and off-page directions.</li>
+        <li>Delivered performance summaries with improvement plans via reports.</li>
+        <li>Used Google Search Console, GA, Ahrefs for tracking and analysis.</li>
+      </ul>
+
+      <div class="job-info">
+        <div class="job-title">Junior SEO Specialist</div>
+        NerdOptimize | Aug 2024 – Nov 2024
+      </div>
+      <ul class="list">
+        <li>Handled SEO tasks from content brief to technical audits.</li>
+        <li>Planned keyword structure and optimized website architecture.</li>
+        <li>Tracked performance using Ahrefs, GA, GSC.</li>
+        <li>Collaborated with internal teams under Account Executive supervision.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title" data-lang="en">Education</div>
+      <div class="section-title" data-lang="th" style="display:none">การศึกษา</div>
+      Burapha University (2024)<br />
+      Bachelor's in Political and Legal Sciences | Public Administration<br />
+      GPA: 2.60
+    </div>
+
+    <div class="section">
+      <div class="section-title" data-lang="en">Skills</div>
+      <div class="section-title" data-lang="th" style="display:none">ทักษะ</div>
+      <ul class="list">
+        <li>SEO: On-page, Keyword Research, Technical SEO, Basic Audit</li>
+        <li>Tools: Ahrefs, GSC, GA, ClickUp, Airtable, Trello, Asana</li>
+        <li>Web: WordPress, HTML, CSS, PHP</li>
+        <li>Language: Thai (Native), English (Intermediate)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title" data-lang="en">Other Experience</div>
+      <div class="section-title" data-lang="th" style="display:none">ประสบการณ์เพิ่มเติม</div>
+
+      <div class="job-info">
+        <div class="job-title">Assistant Election Inspector</div>
+        Election Commission, Chonburi | Nov 2023 – Dec 2023
+      </div>
+      <ul class="list">
+        <li>Ensured legal compliance during the election process.</li>
+        <li>Drafted reports and proposed improvements.</li>
+      </ul>
+
+      <div class="job-info">
+        <div class="job-title">Intern</div>
+        Election Commission, Chonburi | Nov 2023 – Feb 2024
+      </div>
+      <ul class="list">
+        <li>Prepared meeting and election documents.</li>
+        <li>Assisted with policy, law, and process operations.</li>
+      </ul>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-title">เป้าหมายในอาชีพ</div>
-    <div>
-      มุ่งมั่นพัฒนาทักษะและความรู้ด้านเทคโนโลยีอย่างต่อเนื่อง เพื่อสร้างคุณค่าให้กับองค์กรทั้งในด้านประสิทธิภาพ กระบวนการทำงาน และผลลัพธ์ทางธุรกิจ พร้อมเติบโตในสายงานอย่างยั่งยืน และสามารถทำงานร่วมกับทีมข้ามสายงานได้อย่างมืออาชีพ
-    </div>
-  </div>
+  <script>
+    function toggleLanguage() {
+      const sections = document.querySelectorAll('[data-lang]');
+      const currentLang = document.querySelector('[data-lang]:not([style*="display: none"])')?.getAttribute('data-lang');
+      const nextLang = currentLang === 'en' ? 'th' : 'en';
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === nextLang ? '' : 'none';
+      });
+      document.querySelector('.action-buttons button').textContent = nextLang === 'en' ? 'Switch to Thai' : 'เปลี่ยนเป็นอังกฤษ';
+    }
 
-  <div class="section">
-    <div class="section-title">ประสบการณ์ทำงาน</div>
-
-    <div class="job-info">
-      <div class="job-title">SEO Specialist</div>
-      Asia Search Solutions | ธ.ค. 2567 – ปัจจุบัน (Bangkok, Hybrid)
-    </div>
-    <ul class="list">
-      <li>ดูแลลูกค้า SEO ตั้งแต่รับบรีฟ วางกลยุทธ์ จนถึงสรุปผลลัพธ์รายเดือน</li>
-      <li>สื่อสารกับลูกค้าโดยตรง ตอบคำถาม วิเคราะห์เว็บไซต์ และอัปเดตงานให้ต่อเนื่อง</li>
-      <li>วางแผน Keyword Strategy และแนะแนวทางทั้ง On-page / Off-page SEO</li>
-      <li>สรุปผลด้วย Monthly Report พร้อมเสนอแนะเพื่อปรับปรุงประสิทธิภาพ</li>
-      <li>ใช้ Google Search Console, GA, Ahrefs ในการวิเคราะห์ Ranking และ Traffic</li>
-    </ul>
-
-    <div class="job-info">
-      <div class="job-title">Junior SEO Specialist</div>
-      NerdOptimize | ส.ค. 2567 – พ.ย. 2567
-    </div>
-    <ul class="list">
-      <li>ดูแลงาน SEO ตั้งแต่ Content Brief, Meta Tags, Internal Link จนถึง Technical Audit</li>
-      <li>วางแผน Keyword Research และปรับโครงสร้างเว็บไซต์ให้เหมาะสม</li>
-      <li>ติดตามผล Ranking และ Traffic ด้วย Ahrefs, GA, GSC</li>
-      <li>ร่วมวางแผนการทำ SEO ร่วมกับทีมภายใน โดยมี AE เป็นผู้ประสานงานกับลูกค้า</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">การศึกษา</div>
-    Burapha University (2024) <br />
-    ปริญญาตรี รัฐศาสตร์และนิติศาสตร์ | สาขารัฐประศาสนศาสตร์ สายงานบริหารทั่วไป <br />
-    GPA: 2.60
-  </div>
-
-  <div class="section">
-    <div class="section-title">ทักษะ</div>
-    <ul class="list">
-      <li>SEO: On-page, Keyword Research, Basic Audit, Technical SEO</li>
-      <li>เครื่องมือ: Ahrefs, GSC, GA, ClickUp, Airtable, Trello, Asana</li>
-      <li>พื้นฐานเว็บ: WordPress, HTML, CSS, PHP</li>
-      <li>ภาษา: ไทย (Native), อังกฤษ (Intermediate)</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">ประสบการณ์เพิ่มเติม</div>
-
-    <div class="job-info">
-      <div class="job-title">ผู้ช่วยผู้ตรวจการเลือกตั้ง สภาผู้แทนราษฎร</div>
-      กกต. จังหวัดชลบุรี | พ.ย. 2566 – ธ.ค. 2566
-    </div>
-    <ul class="list">
-      <li>ตรวจสอบกระบวนการเลือกตั้งให้เป็นไปตามกฎหมาย</li>
-      <li>จัดทำรายงานและเสนอแนะแนวทางปรับปรุง</li>
-    </ul>
-
-    <div class="job-info">
-      <div class="job-title">นักศึกษาฝึกงาน</div>
-      กกต. จังหวัดชลบุรี | พ.ย. 2566 – ก.พ. 2567
-    </div>
-    <ul class="list">
-      <li>จัดเตรียมเอกสารที่เกี่ยวข้องกับการประชุมและการเลือกตั้ง</li>
-      <li>สนับสนุนด้านนโยบาย กฎหมาย และกระบวนการเลือกตั้ง</li>
-    </ul>
-  </div>
+    function exportPDF() {
+      const element = document.getElementById('resume-content');
+      const opt = {
+        margin:       0,
+        filename:     'Thanachote_Kamolmart_Resume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
 </body>
 
 </html>
