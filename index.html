@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,114 +21,186 @@
     .list li, .nested-list li { margin-bottom: 6px; }
     a { color: #000; text-decoration: none; }
     .linkedin-icon { width: 16px; height: 16px; vertical-align: middle; margin-right: 6px; }
+    .language-toggle { position: fixed; top: 16px; right: 16px; background: #f0f0f0; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; cursor: pointer; }
   </style>
 </head>
-
 <body>
-  <div class="header">
-    <h1>Thanachote Kamolmart</h1>
-    <div class="link">
-      Email: tent.leenuk@gmail.com | Phone: 061-302-7197<br>
-      Location: Bangkok, Thailand |
-      <a href="https://www.linkedin.com/in/thanakamol/" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" class="linkedin-icon" />
-        linkedin.com/in/thanakamol
-      </a>
-    </div>
-  </div>
+  <button class="language-toggle" onclick="toggleLanguage()">Switch to Thai</button>
+  <div id="resume-content"></div>
 
-  <div class="section">
-        <div class="section-title">Professional Summary</div>
-        <div>Aspiring digital marketing professional eager to transition into technology and IT roles at leading companies. Combining marketing expertise with technical skills to drive growth, innovation, and cross-functional collaboration.</div>
+  <script>
+    let currentLang = 'en';
+    const container = document.getElementById('resume-content');
+
+    const englishContent = `
+      <div class="header">
+        <h1>Thanachote Kamolmart</h1>
+        <div class="link">
+          Email: tent.leenuk@gmail.com | Phone: 061-302-7197<br>
+          Location: Bangkok, Thailand |
+          <a href="https://www.linkedin.com/in/thanakamol/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" class="linkedin-icon" />
+            linkedin.com/in/thanakamol
+          </a>
+        </div>
       </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Work Experience</div>
-
-    <div class="job-info">
-      <div class="job-title">SEO Specialist</div>
-      Asia Search Solutions | Dec 2024 – Present<br>
-      <em>Bangkok, Thailand (Hybrid)</em>
-    </div>
-    <ul class="list">
-      <li>Directly managed SEO campaigns and collaborated with clients to understand business goals and SEO performance issues.</li>
-      <li>Took ownership of strategic planning: keyword mapping, content direction, and defining both on-page and off-page SEO initiatives.</li>
-      <li>Coordinated with internal teams (content, design, dev) to execute optimized strategies aligned with KPIs.</li>
-      <li>Regularly delivered monthly performance reports with action plans for continual growth.</li>
-      <li>Utilized tools like Google Search Console, Google Analytics, and Ahrefs for tracking site health, rankings, and traffic.</li>
-    </ul>
-
-    <div class="job-info">
-      <div class="job-title">Junior SEO Specialist</div>
-      NerdOptimize | Aug 2024 – Nov 2024<br>
-      <em>Bangkok, Thailand (Hybrid)</em>
-    </div>
-    <ul class="list">
-      <li>Handled end-to-end SEO optimization from content briefing and keyword mapping to technical on-site audits.</li>
-      <li>Focused on optimizing client websites for better indexing, crawlability, and ranking improvement.</li>
-      <li>Delivered SEO performance reports with practical recommendations.</li>
-      <li>Supported senior SEO team and worked closely with AE to ensure technical implementations were aligned with campaign goals.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Education</div>
-    <div><strong>Burapha University</strong> | Graduated 2024<br>Bachelor’s Degree in Political Science and Law (Public Administration Track)<br>GPA: 2.60</div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Skills</div>
-    <ul class="list">
-      <li><strong>Technical Skills</strong>
-        <ul class="nested-list">
-          <li>SEO: On-page SEO, Keyword Research, Technical SEO, Basic Audits</li>
-          <li>Web: WordPress, HTML, PHP, CSS</li>
+      <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div>To continuously grow my skills and knowledge in technology and digital solutions, while contributing meaningful impact to the organization through process optimization, cross-functional collaboration, and long-term business value. Open to diverse challenges and committed to professional growth.</div>
+      </div>
+      <div class="section">
+        <div class="section-title">Work Experience</div>
+        <div class="job-info"><div class="job-title">SEO Specialist</div>Asia Search Solutions | Dec 2024 – Present<br><em>Bangkok, Thailand (Hybrid)</em></div>
+        <ul class="list">
+          <li>Directly managed SEO campaigns and collaborated with clients to understand business goals and SEO performance issues.</li>
+          <li>Took ownership of strategic planning: keyword mapping, content direction, and defining both on-page and off-page SEO initiatives.</li>
+          <li>Coordinated with internal teams (content, design, dev) to execute optimized strategies aligned with KPIs.</li>
+          <li>Regularly delivered monthly performance reports with action plans for continual growth.</li>
+          <li>Utilized tools like Google Search Console, Google Analytics, and Ahrefs for tracking site health, rankings, and traffic.</li>
         </ul>
-      </li>
-      <li><strong>Tools & Software</strong>
-        <ul class="nested-list">
-          <li>Analytics & SEO Tools: Google Analytics, Google Search Console, Ahrefs</li>
-          <li>Project Management: ClickUp, Discord, Airtable, Asana</li>
-          <li>Office Suites: Google Workspace, Microsoft Office (Excel, Word, PowerPoint)</li>
+        <div class="job-info"><div class="job-title">Junior SEO Specialist</div>NerdOptimize | Aug 2024 – Nov 2024<br><em>Bangkok, Thailand (Hybrid)</em></div>
+        <ul class="list">
+          <li>Handled end-to-end SEO optimization from content briefing and keyword mapping to technical on-site audits.</li>
+          <li>Focused on optimizing client websites for better indexing, crawlability, and ranking improvement.</li>
+          <li>Delivered SEO performance reports with practical recommendations.</li>
+          <li>Supported senior SEO team and worked closely with AE to ensure technical implementations were aligned with campaign goals.</li>
         </ul>
-      </li>
-      <li><strong>Soft Skills</strong>
-        <ul class="nested-list">
-          <li>Communication & Client Coordination</li>
-          <li>Time Management & Prioritization</li>
-          <li>Problem-Solving & Critical Thinking</li>
-          <li>Attention to Detail & Adaptability</li>
+      </div>
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div><strong>Burapha University</strong> | Graduated 2024<br>Bachelor’s Degree in Political Science and Law (Public Administration Track)<br>GPA: 2.60</div>
+      </div>
+      <div class="section">
+        <div class="section-title">Skills</div>
+        <ul class="list">
+          <li><strong>Technical Skills</strong>
+            <ul class="nested-list">
+              <li>SEO: On-page SEO, Keyword Research, Technical SEO, Basic Audits</li>
+              <li>Web: WordPress, HTML, PHP, CSS</li>
+            </ul>
+          </li>
+          <li><strong>Tools & Software</strong>
+            <ul class="nested-list">
+              <li>Analytics & SEO Tools: Google Analytics, Google Search Console, Ahrefs</li>
+              <li>Project Management: ClickUp, Discord, Airtable, Asana</li>
+              <li>Office Suites: Google Workspace, Microsoft Office (Excel, Word, PowerPoint)</li>
+            </ul>
+          </li>
+          <li><strong>Soft Skills</strong>
+            <ul class="nested-list">
+              <li>Communication & Client Coordination</li>
+              <li>Time Management & Prioritization</li>
+              <li>Problem-Solving & Critical Thinking</li>
+              <li>Attention to Detail & Adaptability</li>
+            </ul>
+          </li>
+          <li><strong>Languages</strong> Thai (Native), English (Intermediate)</li>
+          <li><strong>License</strong> Driver’s License (Car)</li>
         </ul>
-      </li>
-      <li><strong>Languages</strong> Thai (Native), English (Intermediate)</li>
-      <li><strong>License</strong> Driver’s License (Car)</li>
-    </ul>
-  </div>
+      </div>
+      <div class="section">
+        <div class="section-title">Additional Experience</div>
+        <div class="job-info"><div class="job-title">Election Assistant (House of Representatives)</div>Office of the Election Commission, Chonburi Province | May 2024 – Jun 2024 (2 months)</div>
+        <ul class="list">
+          <li>Monitored and verified election processes in compliance with regulations and legal guidelines.</li>
+          <li>Compiled reports and proposed recommendations for improvements.</li>
+        </ul>
+        <div class="job-info"><div class="job-title">Internship</div>Office of the Election Commission, Chonburi Province | Nov 2023 – Feb 2024 (3 months)</div>
+        <ul class="list">
+          <li>Provided administrative support for election-related meetings and training events.</li>
+          <li>Gained understanding of local election policies, procedures, and regulatory frameworks.</li>
+        </ul>
+      </div>
+    `;
 
-  <div class="section">
-    <div class="section-title">Additional Experience</div>
+    const thaiContent = `
+      <div class="header">
+        <h1>Thanachote Kamolmart</h1>
+        <div class="link">
+          Email: tent.leenuk@gmail.com | Phone: 061-302-7197<br>
+          Location: Bangkok, Thailand |
+          <a href="https://www.linkedin.com/in/thanakamol/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" class="linkedin-icon" />
+            linkedin.com/in/thanakamol
+          </a>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div>มุ่งมั่นพัฒนาทักษะในสาย Digital Marketing เพื่อก้าวสู่บทบาทด้านเทคโนโลยีและ IT ในบริษัทชั้นนำ พร้อมผสานความเชี่ยวชาญทางการตลาดเข้ากับทักษะทางเทคนิค เพื่อขับเคลื่อนการเติบโต ความคิดสร้างสรรค์ และการทำงานร่วมกันข้ามสายงาน</div>
+      </div>
+      <div class="section">
+        <div class="section-title">Work Experience</div>
+        <div class="job-info"><div class="job-title">SEO Specialist</div>Asia Search Solutions | Dec 2024 – Present<br><em>Bangkok, Thailand (Hybrid)</em></div>
+        <ul class="list">
+          <li>บริหารแคมเปญ SEO และทำงานร่วมกับลูกค้าเพื่อเข้าใจเป้าหมายทางธุรกิจและประสิทธิภาพ SEO</li>
+          <li>วางแผนกลยุทธ์ด้วยการแม็ปคีย์เวิร์ด กำหนดทิศทางเนื้อหา และออกแบบแนวทาง On-page/Off-page SEO</li>
+          <li>ประสานงานกับทีม Content, Design, Dev เพื่อดำเนินกลยุทธ์ตาม KPI</li>
+          <li>จัดทำรายงานผลประสิทธิภาพรายเดือนพร้อมแผนปฏิบัติการเพื่อการเติบโตต่อเนื่อง</li>
+          <li>ใช้ Google Search Console, Google Analytics, Ahrefs ในการติดตามสุขภาพเว็บไซต์ อันดับ และทราฟฟิก</li>
+        </ul>
+        <div class="job-info"><div class="job-title">Junior SEO Specialist</div>NerdOptimize | Aug 2024 – Nov 2024<br><em>Bangkok, Thailand (Hybrid)</em></div>
+        <ul class="list">
+          <li>ดูแลกระบวนการ SEO ครบวงจรตั้งแต่บรีฟคอนเทนต์และการแม็ปคีย์เวิร์ดจนถึงการตรวจสอบเชิงเทคนิคบนเว็บไซต์</li>
+          <li>มุ่งเน้นปรับปรุงเว็บไซต์ลูกค้าให้สามารถจัดทำดัชนี อ่านข้อมูล และอันดับดีขึ้น</li>
+          <li>จัดทำรายงานผล SEO พร้อมข้อเสนอแนะเชิงปฏิบัติ</li>
+          <li>สนับสนุนทีม SEO อาวุโสและทำงานร่วมกับ AE เพื่อให้การใช้งานเทคนิคสอดคล้องกับเป้าหมายแคมเปญ</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div><strong>Burapha University</strong | Graduated 2024<br>Bachelor’s Degree in Political Science and Law (Public Administration Track)<br>GPA: 2.60</div>
+      </div>
+      <div class="section">
+        <div class="section-title">Skills</div>
+        <ul class="list">
+          <li><strong>Technical Skills</strong>
+            <ul class="nested-list">
+              <li>SEO: On-page SEO, Keyword Research, Technical SEO, Basic Audits</li>
+              <li>Web: WordPress, HTML, PHP, CSS</li>
+            </ul>
+          </li>
+          <li><strong>Tools & Software</strong>
+            <ul class="nested-list">
+              <li>Analytics & SEO Tools: Google Analytics, Google Search Console, Ahrefs</li>
+              <li>Project Management: ClickUp, Discord, Airtable, Asana</li>
+              <li>Office Suites: Google Workspace, Microsoft Office (Excel, Word, PowerPoint)</li>
+            </ul>
+          </li>
+          <li><strong>Soft Skills</strong>
+            <ul class="nested-list">
+              <li>Communication & Client Coordination</li>
+              <li>Time Management & Prioritization</li>
+              <li>Problem-Solving & Critical Thinking</li>
+              <li>Attention to Detail & Adaptability</li>
+            </ul>
+          </li>
+          <li><strong>Languages</strong> Thai (Native), English (Intermediate)</li>
+          <li><strong>License</strong> Driver’s License (Car)</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="section-title">Additional Experience</div>
+        <div class="job-info"><div class="job-title">Election Assistant (House of Representatives)</div>Office of the Election Commission, Chonburi Province | May 2024 – Jun 2024 (2 months)</div>
+        <ul class="list">
+          <li>Monitored and verified election processes in compliance with regulations and legal guidelines.</li>
+          <li>Compiled reports and proposed recommendations for improvements.</li>
+        </ul>
+        <div class="job-info"><div class="job-title">Internship</div>Office of the Election Commission, Chonburi Province | Nov 2023 – Feb 2024 (3 months)</div>
+        <ul class="list">
+          <li>Provided administrative support for election-related meetings and training events.</li>
+          <li>Gained understanding of local election policies, procedures, and regulatory frameworks.</li>
+        </ul>
+      </div>
+    `;
 
-    <div class="job-info">
-      <div class="job-title">Election Assistant (House of Representatives)</div>
-      Office of the Election Commission, Chonburi Province | May 2024 – Jun 2024 (2 months)
-    </div>
-    <ul class="list">
-      <li>Monitored and verified election processes in compliance with regulations and legal guidelines.</li>
-      <li>Compiled reports and proposed recommendations for improvements.</li>
-    </ul>
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'th' : 'en';
+      container.innerHTML = currentLang === 'en' ? englishContent : thaiContent;
+      document.querySelector('.language-toggle').textContent = currentLang === 'en' ? 'Switch to Thai' : 'เปลี่ยนเป็นอังกฤษ';
+    }
 
-    <div class="job-info">
-      <div class="job-title">Internship</div>
-      Office of the Election Commission, Chonburi Province | Nov 2023 – Feb 2024 (3 months)
-    </div>
-    <ul class="list">
-      <li>Provided administrative support for election-related meetings and training events.</li>
-      <li>Gained understanding of local election policies, procedures, and regulatory frameworks.</li>
-    </ul>
-  </div>
-
+    container.innerHTML = englishContent;
+  </script>
 </body>
-
 </html>
-
